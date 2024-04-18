@@ -24,6 +24,11 @@
     color:chocolate;
 }
 
+#message{
+    font-size: 20px;
+    color:chocolate;
+}
+
 .input-group{
     margin: 20px 0;
 }
@@ -53,4 +58,5 @@
     padding: 20px;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }

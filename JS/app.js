@@ -6,6 +6,9 @@ const years = document.getElementById("years");
 const rates = document.getElementById("rates");
 const compound = document.getElementById("compound");
 
+//Message
+const message = document.getElementById("message")
+
 // The calculate button
 const button = document.querySelector(".input-group button");
 //Attach an event listener
@@ -16,8 +19,10 @@ const labels = [];
 
 function calculateGrowth (e){
     e.preventDefault();
-    // data.length = 0;
-    // labels.length = 0;
+    data.length = 0;
+    labels.length = 0;
+    let growth = 0;
+
 
     try{
         const initial = parseInt(initialAmount.value)
@@ -27,10 +32,13 @@ function calculateGrowth (e){
 
         for(let i=1; i<=period; i++){
             const final = initial*Math.pow(1 + ((interest/100) /comp), comp * i)
-            data.push(final);
+            data.push(toDecimal(final, 2));
             labels.push("Years" + i)
+            growth = toDecimal(final, 2);
 
         }
+        const growthTHB = growth * 33.00;
+        message.innerText = `You will have this amount ${growthTHB.toFixed(2)} THB after ${period} years`;
         drawGraph();
     }catch (error){
         console.error(error);
