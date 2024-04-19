@@ -37,8 +37,8 @@ function calculateGrowth (e){
             growth = toDecimal(final, 2);
 
         }
-        const growthTHB = growth * 33.00;
-        message.innerText = `You will have this amount ${growthTHB.toFixed(2)} THB after ${period} years`;
+        const growthTHB = growth * 36.80;
+        message.innerText = `คุณจะมีเงินจำนวน ${growthTHB.toFixed(2)} บาท หลังจากผ่านไป ${period} ปี`;
         drawGraph();
     }catch (error){
         console.error(error);
